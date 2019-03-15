@@ -24,7 +24,7 @@
   <div class="container" id="image-section">
     {% for image in images%}
     <div class="row 2mt-3">
-      <div class="col-md-2"></div>
+      <div class="col-md-3"></div>
       <div class="col-md-6">
         <div class="card" id="{{image.id}}">
           <div class="card-header">
@@ -64,8 +64,9 @@
             </form>
             <div class="comments">
               {% for comment in image.comments.all %}
-              
-              <p class="actual-comment"><img src="{{user.profile.pic.cdn_url}}" style="border-radius:50%;" alt="" height="50px" width="50px" class="profile-pic">{{comment.user.username}}: {{comment.comm}}</p>
+
+              <p class="actual-comment"><img src="{{user.profile.pic.cdn_url}}" style="border-radius:50%;" alt=""
+                  height="50px" width="50px" class="profile-pic">{{comment.user.username}}: {{comment.comm}}</p>
               {% endfor %} </div>
             <form action="{% url 'comment' %}" method="post" class="form-inline">
               {% csrf_token %}
@@ -122,10 +123,10 @@
     }
   </script>
   <style>
-  .card{
-    padding: 10px;
-    margin-top: 30px;
-  }
+    .card {
+      padding: 10px;
+      margin-top: 30px;
+    }
   </style>
   {% endblock %}
 </body>
